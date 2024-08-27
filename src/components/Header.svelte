@@ -1,27 +1,26 @@
 <script>
-  import { onMount, onDestroy } from "svelte";
+  
   import { navigate } from "svelte-navigator";
   import { socialLogout } from "../socialLogout";
+  import { LOGIN } from "../Routing/routes";
+
+  //props
 
   export let currentuser;
   export let userphoto;
 
-  let showLogout = false;
-
- 
+  //helper
 
   function logout() {
     socialLogout().then(()=>{
-      navigate("/login");
+      navigate(LOGIN);
       console.log('User logged out');
-
-    })
-    
+    })   
   }
 
 </script>
 
-<header class="relative flex items-center justify-between">
+<header class="relative flex items-center justify-between p-[10px]">
   <div>
     <h1 class="md:text-2xl font-bold">Welcome back, {currentuser}</h1>
     <p class="text-gray-500 text-sm md:text-lg">Explore new recipes</p>
@@ -37,20 +36,13 @@
         >
           Log Out
         </button>
-      </div>
-      <img
+    </div>
+      
+    <img
       src={userphoto}
       alt="User Photo"
       class="h-10 w-10 rounded-full object-cover user-photo"
      />
-
-
   </div>
 
 </header>
-
-<style>
-  header {
-    padding: 10px;
-  }
-</style>

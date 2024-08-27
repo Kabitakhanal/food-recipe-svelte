@@ -4,6 +4,7 @@
   import Input from "../components/Input.svelte";
   import { validateEmail } from "../utils/validateEmail";
   import { validatePassword } from "../utils/validatePassword";
+  import { ALLRECIPE, SIGNUP } from "../Routing/routes";
   
   const navigate = useNavigate();
   
@@ -48,7 +49,7 @@
 
   function handleLogin() {
     socialLogin().then(() => {
-      navigate("/allrecipe");
+      navigate(ALLRECIPE);
     });
   }
 
@@ -107,7 +108,7 @@
       <hr class="border-gray-400 mt-5" />
       <div class="flex justify-between mt-5">
         <p class="text-slate-500">Don't have an account?</p>
-        <Link to="/signup">
+        <Link to={SIGNUP}>
           <span class="font-bold text-primary">Register</span>
         </Link>
       </div>

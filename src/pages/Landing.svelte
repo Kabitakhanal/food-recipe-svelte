@@ -1,6 +1,7 @@
 <script>
 
   import {useNavigate} from "svelte-navigator";
+  import { ALLRECIPE, LOGIN } from "../Routing/routes";
 
   //states
   const navigate=useNavigate();
@@ -9,10 +10,10 @@
   //helpers
   function handleClick(){ 
     if(user){
-      navigate("/allrecipe")
+      navigate(ALLRECIPE)
     }
     else{
-      navigate("/login")
+      navigate(LOGIN)
     }
   }
    

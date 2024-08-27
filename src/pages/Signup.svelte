@@ -4,6 +4,7 @@
     import Input from "../components/Input.svelte";
     import { validateEmail } from "../utils/validateEmail";
     import { validatePassword } from "../utils/validatePassword";
+    import { LOGIN } from "../Routing/routes";
     
     const navigate = useNavigate();
    
@@ -48,7 +49,7 @@
         const hasError = Object.values(errors).some((item) => item !== "");
 
         if (!hasError) {
-          navigate("/login");
+          navigate(LOGIN);
           alert(JSON.stringify(values))
         }
     };
@@ -90,7 +91,7 @@
           {/if}
         </div>
   
-        <button on:click={handleSubmit} class="bg-secondary hover:bg-primary font-extrabold text-white mt-2 pt-2 pb-2 rounded"type="submit">Register</button>
+        <button class="bg-secondary hover:bg-primary font-extrabold text-white mt-2 pt-2 pb-2 rounded"type="submit">Register</button>
          
       </form>
   
@@ -102,7 +103,7 @@
 
       <p class=" mt-5 text-center text-slate-600 font-body text-sm">Already have an account?</p>
          
-      <button on:click={() => navigate("/login")} class=" bg-secondary w-full  text-white  pt-2 pb-2 rounded flex justify-center items-center mt-5 hover:bg-primary">
+      <button on:click={() => navigate(LOGIN)} class=" bg-secondary w-full  text-white  pt-2 pb-2 rounded flex justify-center items-center mt-5 hover:bg-primary">
         <i class="fa-solid fa-arrow-left"></i>
         <p class="text-center font-extrabold font-body ml-2">Back to Login</p>
       </button>

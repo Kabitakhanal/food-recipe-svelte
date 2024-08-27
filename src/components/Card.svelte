@@ -1,11 +1,14 @@
 <script>
 
   import {Link} from "svelte-navigator";
+  import { SINGLERECIPE } from "../Routing/routes";
+  
+  //prop
   export let recipe;
     
 </script>
 
-<Link to='/single/{recipe.idMeal}'>
+<Link to={SINGLERECIPE}/{recipe.idMeal}>
   <div class="relative h-[13.5rem] w-[10.5rem] rounded-md bg-gray-700 bg-cover bg-center shadow-lg font-display transition ease-in-out delay-100 hover:-translate-y-0.5 hover:scale-110 cursor-pointer" 
     style="background-image:url({recipe.strMealThumb});">
  

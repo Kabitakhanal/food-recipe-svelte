@@ -1,5 +1,6 @@
 <script>
   import { Router, Route, Link } from "svelte-navigator";
+  import { LANDING, LOGIN, SIGNUP, ALLRECIPE, SINGLERECIPE } from "./routes"
   import Landing from "../pages/Landing.svelte";
   import Signup from "../pages/Signup.svelte";
   import Single from "../pages/SingleRecipe.svelte";
@@ -11,11 +12,11 @@
 </script>
 
 <Router>
-    <Route path="/" primary={false}><Landing/></Route>
-    <Route path="/signup" primary={false}><Signup/></Route>
-    <Route path="/allrecipe" primary={false}><All {categories}/></Route>
-    <Route path="/single/:id" primary={false}><Single/></Route>
-    <Route path="/login" primary={false}><Login/></Route>
+    <Route path={LANDING} primary={false}><Landing/></Route>
+    <Route path={SIGNUP} primary={false}><Signup/></Route>
+    <Route path={ALLRECIPE} primary={false}><All {categories}/></Route>
+    <Route path={`${SINGLERECIPE}/:id`} primary={false}><Single/></Route>
+    <Route path={LOGIN} primary={false}><Login/></Route>
 </Router>
   
     

@@ -70,6 +70,7 @@
 </script>
   
 <main class="space-y-6 p-4 font-display">
+  
   <Header {currentuser} {userphoto}/>
 
   <div class="relative">

@@ -13,7 +13,7 @@ const loadScript = () => {
    initializer().then((res)=>{
     
    })
-   console.log("i am heres");
+   console.log("Inside Initializer");
    
   };
   script.onerror = (e) => {

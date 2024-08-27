@@ -1,5 +1,4 @@
 <script>
-// @ts-nocheck
 
   import { onMount } from "svelte";
   import NavigationConfig from "./Routing/NavigationConfig.svelte";
@@ -12,7 +11,6 @@
     const response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
     const data = await response.json();
     categories = data.categories;
-    console.log(categories)
   });
   
 </script>
